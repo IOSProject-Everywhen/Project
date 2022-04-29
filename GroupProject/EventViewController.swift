@@ -9,6 +9,7 @@ import UIKit
 
 class EventViewController: UIViewController {
 
+    @IBOutlet weak var eventViewOutlet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
