@@ -1,18 +1,23 @@
 //
-//  EventViewController.swift
+//  EventInfoViewController.swift
 //  GroupProject
 //
-//  Created by Student on 4/7/22.
+//  Created by Nicholas Taylor on 5/2/22.
 //
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventInfoViewController: UIViewController {
 
-    @IBOutlet weak var eventViewOutlet: UILabel!
+    @IBOutlet weak var eventNameLabel: UILabel!
     
-    @IBOutlet weak var addEventButton: UIButton!
+    @IBOutlet weak var peopleLabel: UILabel!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var otherInfoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,18 +1,25 @@
 //
-//  EventViewController.swift
+//  AddEventViewController.swift
 //  GroupProject
 //
-//  Created by Student on 4/7/22.
+//  Created by Nicholas Taylor on 5/2/22.
 //
 
 import UIKit
 
-class EventViewController: UIViewController {
-
-    @IBOutlet weak var eventViewOutlet: UILabel!
+class AddEventViewController: UIViewController {
+    
+    @IBOutlet weak var eventNameField: UITextField!
+    
+    @IBOutlet weak var peopleField: UITextField!
+    
+    @IBOutlet weak var locationField: UITextField!
+    
+    @IBOutlet weak var timeField: UITextField!
+    
+    @IBOutlet weak var otherInfoField: UITextField!
     
     @IBOutlet weak var addEventButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

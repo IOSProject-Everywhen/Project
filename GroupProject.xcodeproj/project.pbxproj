@@ -21,6 +21,8 @@
 		3F818A94281CF44000213132 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F818A93281CF44000213132 /* LoginViewController.swift */; };
 		3F818A96281D037E00213132 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F818A95281D037E00213132 /* GoogleService-Info.plist */; };
 		3F818A99281D047E00213132 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3F818A98281D047E00213132 /* FirebaseAnalytics */; };
+		4230D8E52820AE3B00564061 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230D8E42820AE3B00564061 /* AddEventViewController.swift */; };
+		4230D8E72820AEBF00564061 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230D8E62820AEBF00564061 /* EventInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		3F818A91281CF40400213132 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3F818A93281CF44000213132 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F818A95281D037E00213132 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4230D8E42820AE3B00564061 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		4230D8E62820AEBF00564061 /* EventInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				3F10488927FFD45300F932F8 /* EventViewController.swift */,
 				3F818A91281CF40400213132 /* SignUpViewController.swift */,
 				3F818A93281CF44000213132 /* LoginViewController.swift */,
+				4230D8E42820AE3B00564061 /* AddEventViewController.swift */,
+				4230D8E62820AEBF00564061 /* EventInfoViewController.swift */,
 				3F818A95281D037E00213132 /* GoogleService-Info.plist */,
 			);
 			path = GroupProject;
@@ -283,6 +289,8 @@
 				3F10485E27FFD09400F932F8 /* ViewController.swift in Sources */,
 				3F10488A27FFD45300F932F8 /* EventViewController.swift in Sources */,
 				3F10485A27FFD09400F932F8 /* AppDelegate.swift in Sources */,
+				4230D8E52820AE3B00564061 /* AddEventViewController.swift in Sources */,
+				4230D8E72820AEBF00564061 /* EventInfoViewController.swift in Sources */,
 				3F10485C27FFD09400F932F8 /* SceneDelegate.swift in Sources */,
 				3F818A92281CF40400213132 /* SignUpViewController.swift in Sources */,
 			);
