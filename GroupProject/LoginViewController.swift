@@ -25,7 +25,12 @@ class LoginViewController: UIViewController {
     @IBAction func Login(_ sender: UIButton) {
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var transition = segue.identifier
+        if transition == "eventSegue" {
+            var destination = segue.destination as! EventViewController
+        }
+    }
     /*
     // MARK: - Navigation
 
