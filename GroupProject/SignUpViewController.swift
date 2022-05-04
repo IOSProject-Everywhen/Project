@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
@@ -25,8 +28,64 @@ class SignUpViewController: UIViewController {
         errorOutlet.alpha = 0
     }
     
-    @IBAction func signUpButtonOutlet(_ sender: UIButton) {
+    func validateFields() -> String? {
+        
+        if firstNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields"
+        }
+        
+        return nil
     }
+    
+    @IBAction func signUpButtonOutlet(_ sender: UIButton) {
+        let error = validateFields()
+        
+        if error != nil {
+            showError(error!)
+        }
+        else {
+            
+            let firstName = firstNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            //Create the user
+            Auth.auth().createUser(withEmail:email, password:password) { (result, err) in
+                
+                
+                //Check for errors
+                if err != nil {
+                    self.showError("Error creating user")
+                }
+                else {
+                    //User was created successfully. Now store the first and last name of the user within the database
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid":result!.user.uid]) { (error) in
+                        
+                        
+                        //Check to see if the user info was saved successfully
+                        if error != nil {
+                            self.showError("User data could not  be saved. Try again")
+                        }
+                    }
+                    
+                    
+                }
+            }
+        }
+    }
+    
+    func showError(_ message:String) {
+        errorOutlet.text = message
+        errorOutlet.alpha = 1
+    }
+    
+   
     
     
     /*
