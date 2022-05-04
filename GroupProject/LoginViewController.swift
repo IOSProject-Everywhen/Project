@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -22,7 +25,25 @@ class LoginViewController: UIViewController {
     func setUpElements() {
         errorOutlet.alpha = 0
     }
-    @IBAction func Login(_ sender: UIButton) {
+    @IBAction func LoginOutlet(_ sender: UIButton) {
+        //Create cleaned versions of the text fields
+        let email = emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        //Validate the fields
+        //Sign in the user
+        Auth.auth().signIn(withEmail: email, password: password) {
+            (result, error) in
+            
+            //Couldnt sign in
+            if error != nil {
+                self.errorOutlet.text = error!.localizedDescription
+                self.errorOutlet.alpha = 1
+            }
+            else {
+                
+            }
+        }
     }
     
 

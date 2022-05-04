@@ -126,12 +126,12 @@
 			children = (
 				3F10485927FFD09400F932F8 /* AppDelegate.swift */,
 				3F10485B27FFD09400F932F8 /* SceneDelegate.swift */,
-				3F10485D27FFD09400F932F8 /* HomeViewController.swift */,
 				3F10485F27FFD09400F932F8 /* Main.storyboard */,
 				3F818AC52822F2E500213132 /* Constants.swift */,
 				3F10486227FFD09500F932F8 /* Assets.xcassets */,
 				3F10486427FFD09500F932F8 /* LaunchScreen.storyboard */,
 				3F10486727FFD09500F932F8 /* Info.plist */,
+				3F10485D27FFD09400F932F8 /* HomeViewController.swift */,
 				3F10488927FFD45300F932F8 /* EventViewController.swift */,
 				3F818A91281CF40400213132 /* SignUpViewController.swift */,
 				3F818A93281CF44000213132 /* LoginViewController.swift */,

@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
     
     func validateFields() -> String? {
         
-        if firstNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        if  firstNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -53,6 +53,7 @@ class SignUpViewController: UIViewController {
             let lastName = lastNameOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
             //Create the user
             Auth.auth().createUser(withEmail:email, password:password) { (result, err) in
                 
@@ -73,6 +74,8 @@ class SignUpViewController: UIViewController {
                             self.showError("User data could not  be saved. Try again")
                         }
                     }
+                    //Transition to the event screen
+                    self.transitionToHome()
                     
                     
                 }
@@ -83,6 +86,15 @@ class SignUpViewController: UIViewController {
     func showError(_ message:String) {
         errorOutlet.text = message
         errorOutlet.alpha = 1
+    }
+    
+    func transitionToHome() {
+        let homeViewController =
+        storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as?
+        EventViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
    
