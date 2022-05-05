@@ -25,6 +25,7 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var EventCreatedLabel: UILabel!
     
     var eventsArray = events
+    var userList : [user] = []
     
     @IBAction func AddEventBtn(_ sender: UIButton) {
         eventNameField.isHidden = true
@@ -55,6 +56,7 @@ class AddEventViewController: UIViewController {
         if transition == "eventSegue" {
             let destination = segue.destination as! EventViewController
             destination.eventsArray = eventsArray
+            destination.userList = userList
         }
     }
 

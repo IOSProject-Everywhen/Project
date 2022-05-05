@@ -8,7 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    var userList : [user] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
         let transition = segue.identifier
         if transition == "loginSegue" {
             let destination = segue.destination as! LoginViewController
+            destination.userList = userList
         }
         else if transition == "signupSegue" {
             let destination = segue.destination as! SignUpViewController

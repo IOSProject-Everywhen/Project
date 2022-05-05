@@ -19,6 +19,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     var eventsArray : [event] = []
+    var userList : [user] = []
 
     @IBOutlet weak var eventViewOutlet: UILabel!
     
@@ -37,9 +38,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let transition = segue.identifier
         if transition == "homeSegue" {
             let destination = segue.destination as! HomeViewController
+            destination.userList = userList
         }
         else if transition == "addEventSegue" {
             let destination = segue.destination as! AddEventViewController
+            destination.userList = userList
         }
         else if transition == "eventInfoSegue" {
             let destination = segue.destination as! EventInfoViewController
@@ -48,6 +51,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             destination.eventLocation = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].location
             destination.eventTime = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].time
             destination.eventInfo = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].other
+            destination.userList = userList
         }
     }
 

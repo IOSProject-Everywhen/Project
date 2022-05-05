@@ -17,14 +17,21 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var errorOutlet: UILabel!
+    var firstName = ""
+    var lastName = ""
+    var email = ""
+    var password = ""
+    var userList = users
+    var loginBool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        errorOutlet.isHidden = true
         // Do any additional setup after loading the view.
-        setUpElements()
+        //setUpElements()
     }
     
-    func setUpElements() {
+/*    func setUpElements() {
         errorOutlet.alpha = 0
     }
     
@@ -40,9 +47,9 @@ class SignUpViewController: UIViewController {
         
         return nil
     }
-    
+ */
     @IBAction func signUpButtonOutlet(_ sender: UIButton) {
-        let error = validateFields()
+   /*     let error = validateFields()
         
         if error != nil {
             showError(error!)
@@ -78,10 +85,28 @@ class SignUpViewController: UIViewController {
                     self.transitionToHome()
                     
                     
-                }
-            }
+               }
+            } */
+        
+        loginBool = false
+        firstName = firstNameOutlet.text!
+        lastName = lastNameOutlet.text!
+        email = emailOutlet.text!
+        password = passwordOutlet.text!
+        
+        if firstName.isEmpty || lastName.isEmpty || email.isEmpty || password.isEmpty {
+            errorOutlet.isHidden = false
+            errorOutlet.text = "No fields can be left empty. Try again"
+            loginBool = false
         }
-    }
+        else {
+            loginBool = true
+        }
+        userList.append(user(firstName: firstName, lastName: lastName, email: email, password: password))
+        users.append(user(firstName: firstName, lastName: lastName, email: email, password: password))
+        
+        }
+ /*   }
     
     func showError(_ message:String) {
         errorOutlet.text = message
@@ -96,11 +121,21 @@ class SignUpViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }
+ */
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "eventSegue" {
+            if loginBool {
+                return true
+            }
+        }
+        return false
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let transition = segue.identifier
         if transition == "eventSegue" {
             let destination = segue.destination as! EventViewController
+            destination.userList = userList
         }
     }
     
@@ -114,5 +149,4 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -15,19 +15,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var errorOutlet: UILabel!
+    var loginBool = false
+    var userList : [user] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorOutlet.isHidden = true
 
         // Do any additional setup after loading the view.
-        setUpElements()
+        //setUpElements()
     }
     
-    func setUpElements() {
+   /* func setUpElements() {
         errorOutlet.alpha = 0
-    }
+    } */
     @IBAction func LoginOutlet(_ sender: UIButton) {
         //Create cleaned versions of the text fields
-        let email = emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+      /*  let email = emailOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordOutlet.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         //Validate the fields
@@ -49,14 +53,38 @@ class LoginViewController: UIViewController {
                 self.view.window?.makeKeyAndVisible()
             }
             
+            } */
+        loginBool = false
+        var count = 0
+        for user in userList[0..<userList.count] {
+            if user.email == emailOutlet.text! {
+                if user.password == passwordOutlet.text! {
+                    loginBool = true
+                }
+            }
+            count += 1
+        }
+        if loginBool == false {
+            errorOutlet.isHidden = false
+            errorOutlet.text = "User not found. Try again"
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "eventSegue" {
+            if loginBool {
+                return true
             }
         }
+        return false
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let transition = segue.identifier
-        if transition == "eventSegue" {
-            let destination = segue.destination as! EventViewController
-        }
+            let transition = segue.identifier
+            if transition == "eventSegue" {
+                let destination = segue.destination as! EventViewController
+                destination.userList = userList
+            }
     }
 }
 

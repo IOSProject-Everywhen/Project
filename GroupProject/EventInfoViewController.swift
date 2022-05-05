@@ -16,6 +16,8 @@ class EventInfoViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var otherInfoLabel: UILabel!
     
+    var userList : [user] = []
+    
     var eventName = ""
     var eventPeople = ""
     var eventLocation = ""
