@@ -24,7 +24,9 @@ class AddEventViewController: UIViewController {
     
     @IBOutlet weak var EventCreatedLabel: UILabel!
     
-    @IBAction func AddEventBtn(_ sender: Any) {
+    var eventsArray = events
+    
+    @IBAction func AddEventBtn(_ sender: UIButton) {
         eventNameField.isHidden = true
         EventNameLabel.isHidden = true
         peopleField.isHidden = true
@@ -37,6 +39,9 @@ class AddEventViewController: UIViewController {
         InfoLabel.isHidden = true 
         addEventButton.isHidden = true
         EventCreatedLabel.isHidden = false
+        eventsArray.append(event(name: eventNameField.text!, people: peopleField.text!, location: locationField.text!, time: timeField.text!, other: otherInfoField.text!))
+        events.append(event(name: eventNameField.text!, people: peopleField.text!, location: locationField.text!, time: timeField.text!, other: otherInfoField.text!))
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,13 @@ class AddEventViewController: UIViewController {
         EventCreatedLabel.isHidden = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "eventSegue" {
+            let destination = segue.destination as! EventViewController
+            destination.eventsArray = eventsArray
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -51,8 +51,14 @@ class LoginViewController: UIViewController {
             
             }
         }
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "eventSegue" {
+            let destination = segue.destination as! EventViewController
+        }
+    }
+}
 
     /*
     // MARK: - Navigation
@@ -63,5 +69,3 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-

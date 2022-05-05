@@ -97,7 +97,12 @@ class SignUpViewController: UIViewController {
         view.window?.makeKeyAndVisible()
     }
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "eventSegue" {
+            let destination = segue.destination as! EventViewController
+        }
+    }
     
     
     /*

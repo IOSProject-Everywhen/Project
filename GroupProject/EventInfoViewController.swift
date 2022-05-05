@@ -16,11 +16,11 @@ class EventInfoViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var otherInfoLabel: UILabel!
     
-    var eventName = "add variable location here"
-    var eventPeople = "add variable location here"
-    var eventLocation = "add variable location here"
-    var eventTime = "add variable location here"
-    var eventInfo = "add variable location here"
+    var eventName = ""
+    var eventPeople = ""
+    var eventLocation = ""
+    var eventTime = ""
+    var eventInfo = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

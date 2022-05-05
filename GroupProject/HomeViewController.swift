@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     
     override func viewDidLoad() {
@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     @IBAction func loginButtonOutlet(_ sender: UIButton) {
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "loginSegue" {
+            let destination = segue.destination as! LoginViewController
+        }
+        else if transition == "signupSegue" {
+            let destination = segue.destination as! SignUpViewController
+        }
+    }
 }
-

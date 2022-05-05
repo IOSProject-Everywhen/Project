@@ -7,18 +7,49 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = eventTableViewController.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        cell.textLabel?.text = eventsArray[indexPath.row].name
+        return cell
+    }
+    
+    var eventsArray : [event] = []
 
     @IBOutlet weak var eventViewOutlet: UILabel!
     
     @IBOutlet weak var addEventButton: UIButton!
     
+    @IBOutlet weak var eventTableViewController: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        eventTableViewController.delegate = self
+        eventTableViewController.dataSource = self
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
+        if transition == "homeSegue" {
+            let destination = segue.destination as! HomeViewController
+        }
+        else if transition == "addEventSegue" {
+            let destination = segue.destination as! AddEventViewController
+        }
+        else if transition == "eventInfoSegue" {
+            let destination = segue.destination as! EventInfoViewController
+            destination.eventName = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].name
+            destination.eventPeople = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].people
+            destination.eventLocation = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].location
+            destination.eventTime = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].time
+            destination.eventInfo = eventsArray[(eventTableViewController.indexPathForSelectedRow?.row)!].other
+        }
+    }
 
     /*
     // MARK: - Navigation
