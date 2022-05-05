@@ -13,7 +13,6 @@ class EventViewController: UIViewController {
     
     @IBOutlet weak var addEventButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
