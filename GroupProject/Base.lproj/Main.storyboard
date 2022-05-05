@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uiS-8O-ub6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uiS-8O-ub6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,6 +46,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="Login:" destination="nhV-dz-zzx" eventType="touchUpInside" id="SCd-2G-AKb"/>
+                                            <segue destination="kEN-N5-CSZ" kind="show" identifier="LoginSegue" id="Ndi-Rw-02u"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEJ-yX-tM4">
@@ -78,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IS-fg-FHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="-613"/>
+            <point key="canvasLocation" x="945" y="803"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -221,6 +222,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="signUpButtonOutlet:" destination="aZc-l8-29G" eventType="touchUpInside" id="eMH-um-cSP"/>
+                                            <segue destination="kEN-N5-CSZ" kind="show" identifier="SignUpSegue" id="mEQ-Pe-hqM"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUM-hK-pkV">
@@ -251,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b4-Bk-R0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="776"/>
+            <point key="canvasLocation" x="1930" y="84"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="xQM-Cy-qV0">
@@ -318,14 +320,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YW1-z4-6nx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.753623188406" y="83.705357142857139"/>
+            <point key="canvasLocation" x="3214" y="620"/>
         </scene>
         <!--Event Info View Controller-->
         <scene sceneID="k8N-yS-nXJ">
             <objects>
                 <viewController id="lib-3m-1MN" customClass="EventInfoViewController" customModule="GroupProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RTC-ch-p4q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1B-92-2cY">
@@ -385,14 +387,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMs-pQ-kJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="416"/>
+            <point key="canvasLocation" x="4319" y="995"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="B29-xI-a95">
             <objects>
                 <viewController id="e1m-eD-ZXt" customClass="AddEventViewController" customModule="GroupProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iKM-yS-Gsc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Non-rW-QXU">
@@ -461,7 +463,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-DT-dAk">
-                                <rect key="frame" x="157" y="574" width="103" height="36"/>
+                                <rect key="frame" x="156" y="743" width="103" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray">
@@ -473,11 +475,21 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddEventBtn:" destination="e1m-eD-ZXt" eventType="touchUpInside" id="D44-Vo-DFm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnk-8w-NqH">
                                 <rect key="frame" x="126" y="55" width="162" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event has been added. Please go back to view the event!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFf-IL-6im">
+                                <rect key="frame" x="27" y="451" width="360" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -487,17 +499,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="cix-9m-Wg5"/>
                     <connections>
+                        <outlet property="EventCreatedLabel" destination="LFf-IL-6im" id="4yz-sC-vyy"/>
+                        <outlet property="EventNameLabel" destination="Non-rW-QXU" id="cCt-rK-WLa"/>
+                        <outlet property="InfoLabel" destination="NVd-oA-48e" id="2R0-Ej-8MI"/>
+                        <outlet property="PeopleLabel" destination="N7u-Jd-gCE" id="Hc2-Im-ye6"/>
                         <outlet property="addEventButton" destination="ghq-DT-dAk" id="Be9-Tp-TGD"/>
                         <outlet property="eventNameField" destination="RBh-O2-QBJ" id="wjS-2d-IPH"/>
                         <outlet property="locationField" destination="dyF-wx-I4R" id="5ks-yt-MpH"/>
+                        <outlet property="locationLabel" destination="rew-xu-2yw" id="LGV-h9-h3I"/>
                         <outlet property="otherInfoField" destination="Hfa-ub-9lo" id="Elw-Tg-ggU"/>
                         <outlet property="peopleField" destination="fak-Jd-EzV" id="eIV-Fa-uG9"/>
                         <outlet property="timeField" destination="F1y-vs-mt2" id="Zgf-MR-UUf"/>
+                        <outlet property="timeLabel" destination="v24-1x-lRL" id="CJ4-p3-zDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc5-U2-1Wb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562.3188405797105" y="-275.22321428571428"/>
+            <point key="canvasLocation" x="4318.840579710145" y="-152.00892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CbY-6c-mFE">
@@ -518,6 +536,9 @@
             <point key="canvasLocation" x="34.782608695652179" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mEQ-Pe-hqM"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

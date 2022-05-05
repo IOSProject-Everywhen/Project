@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signUpButtonOutlet(_ sender: UIButton) {
+        
     }
     
     @IBAction func loginButtonOutlet(_ sender: UIButton) {
     }
-    
+
 
 }
 
